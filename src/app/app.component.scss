@@ -6,13 +6,13 @@
   
   main {
     flex: 1 0 auto;
-    display: flex; /* Ensure the main element passes flex properties to its children */
+    display: flex; 
     flex-direction: column;
   }
   
   main > div {
-    flex: 1 0 auto; /* Ensure the wrapper div expands to fill the main element */
-    display: flex; /* Pass flex properties to the child component */
+    flex: 1 0 auto; 
+    display: flex; 
     flex-direction: column;
   }
   

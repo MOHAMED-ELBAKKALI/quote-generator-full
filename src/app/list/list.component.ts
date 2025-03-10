@@ -46,7 +46,7 @@ export class ListComponent implements OnInit {
     if (confirm('Are you sure you want to delete this quote?')) {
       this.http.delete(`http://localhost:8080/api/quotes/${id}`).subscribe({
         next: () => {
-          this.quotes.splice(index, 1); // Remove the quote from the local array
+          this.quotes.splice(index, 1); 
           alert('Quote deleted successfully!');
         },
         error: (error) => {
