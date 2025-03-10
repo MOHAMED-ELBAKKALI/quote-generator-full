@@ -1,0 +1,18 @@
+<div class="quote-wrapper">
+  <div class="welcome-text">
+    <p>Welcome to this section! Here you can get the quote of the day.</p>
+  </div>
+  <div class="quote-container">
+    <div *ngIf="isLoading" class="loading">Loading...</div>
+    <div *ngIf="!isLoading">
+      <p>{{ quote }}</p>
+      <small class="author">By: {{ author }}</small>
+      <div class="button-container">
+        <button (click)="getNewQuote()">New Quote</button>
+        <button class="copy-button" (click)="copyQuote()" [disabled]="!quote || quote === 'No quote found!' || quote === 'Failed to load quote. Try again!'">
+          <i class="fa fa-clone"></i>Copy
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

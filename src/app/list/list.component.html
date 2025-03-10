@@ -1,0 +1,14 @@
+<div class="quote-list-container">
+    <h2>List of Quotes</h2>
+    <div *ngFor="let quote of quotes; let i = index">
+      <div class="quote-card">
+        <p class="quote-text">"{{ quote.quote }}"</p>
+        <p class="quote-author">- {{ quote.author }}</p>
+      </div>
+      <div class="action-buttons">
+        <button class="copy-button" (click)="copyQuote(i)">Copy</button>
+        <button class="delete-button" (click)="deleteQuote(quote.id, i)"><i class="fa fa-trash"></i> Delete</button>
+      </div>
+    </div>
+    <p *ngIf="quotes.length === 0">No quotes available yet. Add some from the Create page!</p>
+  </div>

@@ -1,0 +1,14 @@
+<div class="create-container">
+    <h2>Create Your Own Quote</h2>
+    <form [formGroup]="quoteForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="quote">Quote:</label>
+        <textarea id="quote" formControlName="quote" rows="4" required></textarea>
+      </div>
+      <div>
+        <label for="author">Author:</label>
+        <input id="author" formControlName="author" type="text" required />
+      </div>
+      <button type="submit" [disabled]="quoteForm.invalid">Save Quote</button>
+    </form>
+  </div>

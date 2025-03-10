@@ -1,0 +1,106 @@
+.welcome-text {
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px;
+  font-size: 1.2em;
+  color: #444;
+}
+
+.quote-container {
+  text-align: center;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 600px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.loading {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  padding: 20px;
+}
+
+p {
+  font-size: 1.5em;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.author {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.copy-button {
+  background-color: #6c757d;
+}
+
+.copy-button:hover:not(:disabled) {
+  background-color: #5a6268;
+}
+
+.copy-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .welcome-text {
+    margin: 10px;
+    font-size: 1em;
+  }
+
+  .quote-container {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+
+  .button-container {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  button {
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+
+i{
+  margin-right: 5px;
+}
+
+.quote-wrapper{
+  padding-bottom: 150px;
+  
+}
