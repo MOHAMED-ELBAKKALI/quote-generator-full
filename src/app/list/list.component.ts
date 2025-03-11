@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'; 
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, FormsModule], 
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
   quotes: any[] = [];
+  selectedQuote: any = null; 
+  selectedIndex: number = -1; 
 
   constructor(private http: HttpClient) {}
 
@@ -38,7 +41,7 @@ export class ListComponent implements OnInit {
       }).catch(err => {
         console.error('Failed to copy quote:', err);
         alert('Failed to copy quote. Please try again.');
-      });
+      }); 
     }
   }
 
@@ -55,5 +58,32 @@ export class ListComponent implements OnInit {
         }
       });
     }
+  }
+
+  openUpdateModal(quote: any, index: number) {
+    this.selectedQuote = { ...quote };
+    this.selectedIndex = index; 
+  }
+
+  updateQuote(id: number, index: number) {
+    if (this.selectedQuote) {
+      this.http.put(`http://localhost:8080/api/quotes/${id}`, this.selectedQuote).subscribe({
+        next: (response: any) => {
+          this.quotes[index] = response; 
+          this.selectedQuote = null; 
+          this.selectedIndex = -1; 
+          alert('Quote updated successfully!');
+        },
+        error: (error) => {
+          console.error('Error updating quote:', error);
+          alert('Failed to update quote. Please try again.');
+        }
+      });
+    }
+  }
+
+  cancelUpdate() {
+    this.selectedQuote = null; 
+    this.selectedIndex = -1; 
   }
 }

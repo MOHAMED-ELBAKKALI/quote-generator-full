@@ -1,82 +1,160 @@
 .quote-list-container {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
-    padding-bottom: 150px; 
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  padding-bottom: 150px; 
+}
+
+h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.quote-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.02);
   }
-  
-  h2 {
-    color: #333;
-    text-align: center;
-    margin-bottom: 20px;
+}
+
+.quote-text {
+  font-size: 1.2em;
+  color: #444;
+  margin: 0 0 10px;
+}
+
+.quote-author {
+  font-style: italic;
+  color: #666;
+  margin: 0;
+  text-align: right;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.copy-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #0056b3;
   }
-  
-  .quote-card {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-  
-    &:hover {
-      transform: scale(1.02);
-    }
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #b02a37;
   }
-  
-  .quote-text {
-    font-size: 1.2em;
-    color: #444;
-    margin: 0 0 10px;
+}
+
+.update-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #218838;
   }
-  
-  .quote-author {
-    font-style: italic;
-    color: #666;
-    margin: 0;
-    text-align: right;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  text-align: center;
+}
+
+.modal-content input {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.save-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.2s;
+  margin-right: 10px;
+
+  &:hover {
+    background-color: #218838;
   }
-  
-  .action-buttons {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
+}
+
+.cancel-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #b02a37;
   }
-  
-  .copy-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    padding: 5px 10px;
-    cursor: pointer;
-    font-size: 0.9em;
-    transition: background-color 0.2s;
-  
-    &:hover {
-      background-color: #0056b3;
-    }
-  }
-  
-  .delete-button {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    padding: 5px 10px;
-    cursor: pointer;
-    font-size: 0.9em;
-    transition: background-color 0.2s;
-  
-    &:hover {
-      background-color: #b02a37;
-    }
-  }
-  
-  p[ngIf] {
-    color: #888;
-    text-align: center;
-    font-style: italic;
-  }
+}
+
+p[ngIf] {
+  color: #888;
+  text-align: center;
+  font-style: italic;
+}
+
+i{
+  margin-right: 4px;
+}
