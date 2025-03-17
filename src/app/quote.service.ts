@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class QuoteService {
-  private apiUrl = '/api/random';
+  private apiUrl = 'http://localhost:8080/api/quotes/external'; 
 
   constructor(private http: HttpClient) { }
 

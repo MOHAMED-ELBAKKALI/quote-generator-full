@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // Add FormsModule for ngModel
+import { FormsModule } from '@angular/forms'; 
 import { QuoteService } from '../quote.service';
-import { HttpClient } from '@angular/common/http'; // Add HttpClient for PUT request
+import { HttpClient } from '@angular/common/http'; 
 
 @Component({
   selector: 'app-quote',
   standalone: true,
-  imports: [CommonModule, FormsModule], // Add FormsModule
+  imports: [CommonModule, FormsModule], 
   templateUrl: './quote.component.html',
   styleUrls: ['./quote.component.scss']
 })
@@ -15,9 +15,9 @@ export class QuoteComponent implements OnInit {
   quote: string = '';
   author: string = '';
   isLoading: boolean = false;
-  currentQuote: any = null; // Store the current quote object
-  isEditing: boolean = false; // Control modal visibility
-  editQuote: any = { q: '', a: '' }; // Store the quote being edited, matching API format
+  currentQuote: any = null; 
+  isEditing: boolean = false; 
+  editQuote: any = { q: '', a: '' }; 
 
   constructor(private quoteService: QuoteService, private http: HttpClient) {}
 
@@ -30,10 +30,10 @@ export class QuoteComponent implements OnInit {
     this.quoteService.getRandomQuote().subscribe({
       next: (data) => {
         console.log('API Response:', data);
-        if (data && data.length > 0 && data[0].q) {
-          this.currentQuote = data[0]; // Store the full quote object
-          this.quote = data[0].q;
-          this.author = data[0].a ? data[0].a : 'unknown';
+        if (data && data.quote) { // Change to use 'quote' instead of 'q'
+          this.currentQuote = data; 
+          this.quote = data.quote; 
+          this.author = data.author ? data.author : 'unknown'; 
         } else {
           this.quote = 'No quote found!';
           this.author = 'unknown';
@@ -53,8 +53,8 @@ export class QuoteComponent implements OnInit {
 
   openUpdateModal() {
     if (this.currentQuote) {
-      this.editQuote = { ...this.currentQuote }; // Create a copy for editing
-      this.isEditing = true; // Show the modal
+      this.editQuote = { q: this.currentQuote.quote, a: this.currentQuote.author }; 
+      this.isEditing = true; 
     }
   }
 
@@ -65,8 +65,8 @@ export class QuoteComponent implements OnInit {
           next: (response: any) => {
             this.quote = response.q;
             this.author = response.a || 'unknown';
-            this.currentQuote = response; // Update the current quote
-            this.isEditing = false; // Close the modal
+            this.currentQuote = response; 
+            this.isEditing = false; 
             alert('Quote updated successfully!');
           },
           error: (err) => {
@@ -78,8 +78,8 @@ export class QuoteComponent implements OnInit {
   }
 
   cancelUpdate() {
-    this.isEditing = false; // Close the modal
-    this.editQuote = { q: '', a: '' }; // Reset editQuote
+    this.isEditing = false;
+    this.editQuote = { q: '', a: '' }; 
   }
 
   copyQuote() {
