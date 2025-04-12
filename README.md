@@ -40,9 +40,9 @@ The back-end is a Java application, likely using Spring Boot (based on typical J
 1. Navigate to the back-end directory:
    ```
    cd backend
-3. Install dependencies :
+2. Install dependencies :
    ```
     mvn install
-3.Run the back-end:
+3. Run the back-end:
  
     mvn spring-boot:run
