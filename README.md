@@ -38,5 +38,8 @@ The back-end is a Java application, likely using Spring Boot (based on typical J
 
 ### Setup Instructions
 1. Navigate to the back-end directory:
-   ```bash
    cd backend
+2. Install dependencies :
+    mvn install
+3.Run the back-end:
+    mvn spring-boot:run
