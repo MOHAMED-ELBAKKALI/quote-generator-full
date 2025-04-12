@@ -1,0 +1,7 @@
+POST http://localhost:8080/api/quotes
+Content-Type: application/json
+
+{
+  "quote": "Test quote with PostgreSQL",
+  "author": "Test Author"
+}
