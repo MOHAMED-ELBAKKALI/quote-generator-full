@@ -44,5 +44,5 @@ The back-end is a Java application, likely using Spring Boot (based on typical J
    ```
     mvn install
 3. Run the back-end:
- 
+ ```
     mvn spring-boot:run
